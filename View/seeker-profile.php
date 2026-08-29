@@ -144,21 +144,24 @@ input[type="reset"]{
 <p><a href="./seeker-dashboard.php">Dashboard</a></p>
 <p><a href="./jobs 1.php">Find Jobs</a></p>
 <p><a href="./applications 1.php">My Applications</a></p>
+<p><a href="../Controller/logout.php">Logout</a></p>
+
 </div>
 <form method="post" action="" enctype="multipart/form-data" onsubmit="return collectData()">
 <fieldset>
 <legend>Personal Information</legend>
 <table>
-<tr><td><label for="name">Full Name:</label></td><td><input type="text" id="name" name="name"></td></tr>
-<tr><td><label for="email">Email:</label></td><td><input type="email" id="email" name="email"></td></tr>
-<tr><td><label for="phone">Phone:</label></td><td><input type="tel" id="phone" name="phone"></td></tr>
-<tr><td><label for="education">Education:</label></td><td><textarea id="education" name="education" rows="5" cols="30"></textarea></td></tr>
-<tr><td><label for="skills">Skills:</label></td><td><textarea id="skills" name="skills" rows="5" cols="30"></textarea></td></tr>
-<tr><td><label for="experience">Experience:</label></td><td><textarea id="experience" name="experience" rows="5" cols="30"></textarea></td></tr>
+<tr><td><label for="name">Full Name:</label></td><td><input type="text" id="name" name="name" value="<?php echo $name; ?>"  ></td></tr>
+<tr><td><label for="email">Email:</label></td><td><input type="email" id="email" name="email" value="<?php echo $email; ?>"></td></tr>
+<tr><td><label for="phone">Phone:</label></td><td><input type="tel" id="phone" name="phone" value="<?php echo $phone; ?>"></td></tr>
+<tr><td><label for="education">Education:</label></td><td><textarea id="education" name="education" rows="5" cols="30"><?php echo $education; ?></textarea></td></tr>
+<tr><td><label for="skills">Skills:</label></td><td><textarea id="skills" name="skills" rows="5" cols="30"><?php echo $skills; ?></textarea></td></tr>
+<tr><td><label for="experience">Experience:</label></td><td><textarea id="experience" name="experience" rows="5" cols="30"><?php echo $experience; ?></textarea></td></tr>
+<tr><td><?php echo $cv_file; ?></td></tr>
 <tr><td><label for="cv">Upload CV:</label></td><td><input type="file" id="cv" name="cv"></td></tr>
 </table>
+<span id="userresponse"></span>
 <input type="submit" id="update" name="update" value="Update Profile">
-<input type="reset" id="reset" name="reset" value="Reset">
 </fieldset>
 </form>
 </div>

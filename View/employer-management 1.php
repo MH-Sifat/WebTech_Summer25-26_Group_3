@@ -142,7 +142,7 @@ input[type="reset"]{
 <div class="navbar">
 <p><a href="./employer-dashboard 1.php">Dashboard</a></p>
 <p><a href="./employer-profile 1.php">Company Profile</a></p>
-<p><a href="./login 2.php">Logout</a></p>
+<p><a href="../Controller/logout.php">Logout</a></p>
 </div>
 <form method="post" action="" onsubmit="return collectData()">
 <fieldset>
@@ -150,7 +150,7 @@ input[type="reset"]{
 <table>
 <tr><td><label for="title">Job Title:</label></td><td><input type="text" id="title" name="title"></td></tr>
 <tr><td><label for="location">Location:</label></td><td><input type="text" id="location" name="location"></td></tr>
-<tr><td><label for="jobType">Job Type:</label></td><td><select id="jobType" name="jobType"><option value="">Select Job Type</option><option value="full_time">Full Time</option><option value="part_time">Part Time</option><option value="internship">Internship</option><option value="remote">Remote</option></select></td></tr>
+<tr><td><label for="jobType">Job Type:</label></td><td><select id="jobType" name="jobType"><option value="">Select Job Type</option><option value="full-time">Full Time</option><option value="part-time">Part Time</option><option value="internship">Internship</option><option value="remote">Remote</option></select></td></tr>
 <tr><td><label for="salary">Salary:</label></td><td><input type="text" id="salary" name="salary"></td></tr>
 <tr><td><label for="description">Job Description:</label></td><td><textarea id="description" name="description" rows="5" cols="30"></textarea></td></tr>
 <tr><td><label for="requirements">Requirements:</label></td><td><textarea id="requirements" name="requirements" rows="5" cols="30"></textarea></td></tr>
@@ -161,9 +161,17 @@ input[type="reset"]{
 </fieldset>
 </form>
 <h2>My Job Listings</h2>
-<p>No job listings available.</p>
+<p>
+   <?php
+      include "../Model/employer-managemnet-jobs.php";
+    ?>
+</p>
 <h2>Applicants</h2>
-<p>No applicants available.</p>
+<p>
+   <?php
+      include "../Model/employer-management-application.php";
+    ?>
+</p>
 </div>
 
 <script>function collectData() {

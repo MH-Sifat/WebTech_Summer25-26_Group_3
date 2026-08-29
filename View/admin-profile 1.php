@@ -141,20 +141,19 @@ input[type="reset"]{
 <div class="navbar">
 <p><a href="./admin-dashboard 1.php">Dashboard</a></p>
 <p><a href="./admin-management 1.php">Management</a></p>
-<p><a href="./login 2.php">Logout</a></p>
+<p><a href="../Controller/logout.php">Logout</a></p>
 </div>
 <form method="post" action="" onsubmit="return collectData()">
 <fieldset>
 <legend>Admin Profile Information</legend>
 <table>
-<tr><td><label for="name">Full Name:</label></td><td><input type="text" id="name" name="name"></td></tr>
-<tr><td><label for="email">Email:</label></td><td><input type="email" id="email" name="email"></td></tr>
-<tr><td><label for="phone">Phone:</label></td><td><input type="tel" id="phone" name="phone"></td></tr>
-<tr><td><label for="password">New Password:</label></td><td><input type="password" id="password" name="password"></td></tr>
-<tr><td><label for="confirmPassword">Confirm New Password:</label></td><td><input type="password" id="confirmPassword" name="confirmPassword"></td></tr>
+<tr><td><label for="name">Full Name:</label></td><td><input type="text" id="name" name="name" value="<?php echo $name; ?>"></td></tr>
+<tr><td><label for="email">Email:</label></td><td><input type="email" id="email" name="email" value="<?php echo $email; ?>"></td></tr>
+<tr><td><label for="phone">Phone:</label></td><td><input type="tel" id="phone" name="phone" value="<?php echo $phone; ?>"></td></tr>
+<tr><td><label for="password">New Password:</label></td><td><input type="password" id="password" name="password" value="<?php echo $password; ?>"></td></tr>
+<tr><td><label for="confirmPassword">Confirm New Password:</label></td><td><input type="password" id="confirmPassword" name="confirmPassword" value="<?php echo $confirmPassword; ?>"></td></tr>
 </table>
 <input type="submit" id="update" name="update" value="Update Profile">
-<input type="reset" id="reset" name="reset" value="Reset">
 </fieldset>
 </form>
 </div>

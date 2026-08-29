@@ -1,12 +1,10 @@
-<?php
-include "../Controller/jobs-controller.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <title>Find Jobs</title>
+    <script src="../JS/SearchJobs.js"></script>
+
     <style>
         *{
     margin: 0;
@@ -130,22 +128,26 @@ input[type="submit"]{
 <p><a href="./seeker-dashboard.php">Dashboard</a></p>
 <p><a href="./applications 1.php">My Applications</a></p>
 <p><a href="./seeker-profile.php">Update Profile</a></p>
-<p><a href="./login 2.php">Logout</a></p>
+<p><a href="../Controller/logout.php">Logout</a></p>
 </div>
 <form method="post" action="" onsubmit="return collectData()">
 <fieldset>
 <legend>Search Jobs</legend>
 <table>
-<tr><td><label for="keyword">Keyword:</label></td><td><input type="text" id="keyword" name="keyword" placeholder="Enter job title or keyword"></td></tr>
-<tr><td><label for="location">Location:</label></td><td><input type="text" id="location" name="location" placeholder="Enter location"></td></tr>
-<tr><td><label for="jobType">Job Type:</label></td><td><select id="jobType" name="jobType"><option value="">Select Job Type</option><option value="full_time">Full Time</option><option value="part_time">Part Time</option><option value="internship">Internship</option><option value="remote">Remote</option></select></td></tr>
+<tr><td><label for="keyword">Keyword:</label></td><td><input type="text" id="keyword" name="keyword" placeholder="Enter job title or keyword" onkeyup="searchJobs()"></td></tr>
+<tr><td><label for="location">Location:</label></td><td><input type="text" id="location" name="location" placeholder="Enter location" onkeyup="searchJobs()"></td></tr>
+<tr><td><label for="jobType">Job Type:</label></td><td><select id="jobType" name="jobType"><option value="" onkeyup="searchJobs()">Select Job Type</option><option value="full_time">Full Time</option><option value="part_time">Part Time</option><option value="internship">Internship</option><option value="remote">Remote</option></select></td></tr>
 </table>
 <input type="submit" id="search" name="search" value="Search">
 
 </fieldset>
 </form>
+
 <h2>Available Jobs</h2>
-<p>No jobs available.</p>
+<span id="jobResults"></span>
+ <?php
+    include "../Controller/jobs-controller.php";
+ ?>
 </div>
 
 

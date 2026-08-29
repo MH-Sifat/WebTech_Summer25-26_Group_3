@@ -99,26 +99,21 @@ td{
 
 <p><a href="./admin-management 1.php">Management</a></p>
 <p><a href="./admin-profile 1.php">Update Profile</a></p>
-<p><a href="./login 2.php">Logout</a></p>
+<p><a href="../Controller/logout.php">Logout</a></p>
 </div>
-<form method="post" action="" onsubmit="return collectData()">
+<form method="post" action="">
 <fieldset>
 <legend>System Statistics</legend>
 <table>
-<tr><td>Total Users:</td><td></td></tr>
-<tr><td>Total Job Seekers:</td><td></td></tr>
-<tr><td>Total Employers:</td><td></td></tr>
-<tr><td>Total Jobs:</td><td></td></tr>
-<tr><td>Total Applications:</td><td></td></tr>
+<tr><td>Total Users:</td><td><?php echo $total_users; ?></td></tr>
+<tr><td>Total Job Seekers:</td><td><?php echo $total_job_seekers; ?></td></tr>
+<tr><td>Total Employers:</td><td><?php echo $total_employers; ?></td></tr>
+<tr><td>Total Jobs:</td><td><?php echo $total_jobs; ?></td></tr>
+<tr><td>Total Applications:</td><td><?php echo $total_applications; ?></td></tr>
 </table>
 </fieldset>
 </form>
 </div>
-
-<script>function collectData() {
-
-}
-</script>
 
 </body>
 </html>

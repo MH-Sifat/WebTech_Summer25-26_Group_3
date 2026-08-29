@@ -1,5 +1,5 @@
 <?php
-include "../Controller/seeker-dashboard-controller.php";
+include "../Model/jobseeker-dashboard.php";
 ?>
 
 <!DOCTYPE html>
@@ -100,30 +100,28 @@ td{
 <p><a href="./jobs 1.php">Find Jobs</a></p>
 <p><a href="./applications 1.php">My Applications</a></p>
 <p><a href="./seeker-profile.php">Update Profile</a></p>
-<p><a href="./login 2.php">Logout</a></p>
+<p><a href="../Controller/logout.php">Logout</a></p>
 </div>
-<form method="post" action="" onsubmit="return collectData()">
+<form method="post" action="">
 <fieldset>
 <legend>Profile</legend>
 <table>
-<tr><td>Name:</td><td></td></tr>
-<tr><td>Email:</td><td></td></tr>
-<tr><td>Profile Completion:</td><td></td></tr>
+<tr><td>Name:</td><td> <?php echo $job_seeker_data['full_name'] ?? "";?></td></tr>
+<tr><td>Email:</td><td><?php echo $job_seeker_data['email'] ?? "";?></td></tr>
 </table>
 </fieldset>
 <fieldset>
 <legend>Application Summary</legend>
 <table>
-<tr><td>Total Applications:</td><td></td></tr>
-<tr><td>Pending:</td><td></td></tr>
-<tr><td>Shortlisted:</td><td></td></tr>
-<tr><td>Rejected:</td><td></td></tr>
+<tr><td>Total Applications:</td><td><?php  echo $total_applications;?></td></tr>
+<tr><td>Pending:</td><td><?php echo $pending_applications;?></td></tr>
+<tr><td>Shortlisted:</td><td><?php  echo $shortlisted_applications;?></td></tr>
+<tr><td>Rejected:</td><td><?php  echo $rejected_applications;?></td></tr>
+<tr><td>Accepted:</td><td><?php  echo $accepted_applications;?></td></tr>
 </table>
 </fieldset>
 </form>
 </div>
-<script>function collectData() {
-  
-}</script>
+
 </body>
 </html>

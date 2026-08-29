@@ -142,21 +142,20 @@ input[type="reset"]{
 <div class="navbar">
 <p><a href="./employer-dashboard 1.php">Dashboard</a></p>
 <p><a href="./employer-management 1.php">Manage Jobs</a></p>
-<p><a href="./login 2.php">Logout</a></p>
+<p><a href="../Controller/logout.php">Logout</a></p>
 </div>
 <form method="post" action="" onsubmit="return collectData()">
 <fieldset>
 <legend>Company Information</legend>
 <table>
-<tr><td><label for="companyName">Company Name:</label></td><td><input type="text" id="companyName" name="companyName"></td></tr>
-<tr><td><label for="email">Company Email:</label></td><td><input type="email" id="email" name="email"></td></tr>
-<tr><td><label for="phone">Phone:</label></td><td><input type="tel" id="phone" name="phone"></td></tr>
-<tr><td><label for="website">Website:</label></td><td><input type="url" id="website" name="website"></td></tr>
-<tr><td><label for="industry">Industry:</label></td><td><input type="text" id="industry" name="industry"></td></tr>
-<tr><td><label for="description">Company Description:</label></td><td><textarea id="description" name="description" rows="5" cols="30"></textarea></td></tr>
+<tr><td><label for="companyName">Company Name:</label></td><td><input type="text" id="companyName" name="companyName" value="<?php echo $companyName; ?>" ></td></tr>
+<tr><td><label for="email">Company Email:</label></td><td><input type="email" id="email" name="email" value="<?php echo $email; ?>" ></td></tr>
+<tr><td><label for="phone">Phone:</label></td><td><input type="tel" id="phone" name="phone" value="<?php echo $phone; ?>" ></td></tr>
+<tr><td><label for="website">Website:</label></td><td><input type="text" id="website" name="website" value="<?php echo $website; ?>" ></td></tr>
+<tr><td><label for="industry">Industry:</label></td><td><input type="text" id="industry" name="industry" value="<?php echo $industry; ?>" ></td></tr>
+<tr><td><label for="description">Company Description:</label></td><td><textarea id="description" name="description" rows="5" cols="30"><?php echo $description; ?> </textarea></td></tr>
 </table>
 <input type="submit" id="update" name="update" value="Update Profile">
-<input type="reset" id="reset" name="reset" value="Reset">
 
 </fieldset>
 </form>

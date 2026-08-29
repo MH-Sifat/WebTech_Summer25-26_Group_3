@@ -1,7 +1,3 @@
-<?php
-include "../Controller/admin-management-controller.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -94,30 +90,38 @@ td{
 
 <p><a href="./admin-dashboard 1.php">Dashboard</a></p>
 <p><a href="./admin-profile 1.php">Update Profile</a></p>
-<p><a href="./login 2.php">Logout</a></p>
+<p><a href="../Controller/logout.php">Logout</a></p>
 </div>
 
-<form method="post" action="" onsubmit="return collectData()"> 
+<form method="post" action=""> 
 <fieldset>
-<legend>Manage Users</legend>
+<legend>Users Details</legend>
 <table>
-<tr><td>Name</td><td>Email</td><td>Role</td><td>Status</td><td>Action</td></tr>
-<tr><td colspan="5">No users available.</td></tr>
+<tr>
+    <td>
+        <?php
+        include "../Model/admin-management-users.php";
+        ?>
+    </td>
+</tr>
 </table>
 </fieldset>
 <fieldset>
-<legend>Manage Jobs</legend>
+
+
+<legend>Job details</legend>
 <table>
-<tr><td>Job Title</td><td>Employer</td><td>Posted</td><td>Status</td><td>Action</td></tr>
-<tr><td colspan="5">No jobs available.</td></tr>
+<tr>
+    <td>
+        <?php
+        include "../Model/admin-management-jobs.php";
+        ?>
+    </td>
+</tr>
 </table>
 </fieldset>
 </form>
 </div>
-<script>function collectData() {
-
-}
-</script>
 
 </body>
 </html>

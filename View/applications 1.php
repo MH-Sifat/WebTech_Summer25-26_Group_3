@@ -1,7 +1,3 @@
-<?php
-include "../Controller/applications-controller.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -97,22 +93,22 @@ td{
 <p><a href="./seeker-dashboard.php">Dashboard</a></p>
 <p><a href="./jobs 1.php">Find Jobs</a></p>
 <p><a href="./seeker-profile.php">Update Profile</a></p>
-<p><a href="./login 2.php">Logout</a></p>
+<p><a href="../Controller/logout.php">Logout</a></p>
 </div>
-<form method="post" action="" onsubmit="return collectData()">
+<form method="post" action="" >
 <fieldset>
 <legend>Application History</legend>
 <table>
-<tr><td>Job Title</td><td>Company</td><td>Date Applied</td><td>Status</td></tr>
-<tr><td colspan="4">No applications found.</td></tr>
+<tr>
+    <td>
+     <?php include "../Model/application-dataconnect.php"?>
+
+    </td>
+</tr>
 </table>
 </fieldset>
 </form>
 </div>
 
-<script>function collectData() {
-
-}
-</script>
 </body>
 </html>

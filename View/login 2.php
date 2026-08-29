@@ -1,4 +1,5 @@
 <?php
+# admin@gmail.com   admin123
 include "../Controller/login-controller.php";
 ?>
 
@@ -6,6 +7,7 @@ include "../Controller/login-controller.php";
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
+
     <title>Login</title>
     <style>
         *{
@@ -126,6 +128,7 @@ a{
     text-decoration: none;
     
 }
+
     </style>
 </head>
 <body>
@@ -138,12 +141,12 @@ a{
 <table>
 <tr><td><label for="email">Email:</label></td><td><input type="email" id="email" name="email" placeholder="Enter your Email" required></td></tr>
 <tr><td><label for="password">Password:</label></td><td><input type="password" id="password" name="password" placeholder="Enter your Password" required></td></tr>
-<tr><td><label for="remember">Remember Me:</label></td><td><input type="checkbox" id="remember" name="remember"></td></tr>
+<tr><td><label for="remember">Remember Me:</label></td><td><input type="checkbox" id="remember" name="remember" value="1"></td></tr>
 </table>
 <input type="submit" id="login" name="login" value="Login">
 <input type="reset" id="reset" name="reset" value="Reset">
 </fieldset>
-
+<span id="userresponse"></span>
 </form>
 <p>Don't have an account? <a href="./register 1.php">Signup</a></p>
 </div>

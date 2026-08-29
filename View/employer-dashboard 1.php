@@ -95,32 +95,27 @@ td{
 <div class="navbar">
 <p><a href="./employer-management 1.php">Manage Jobs</a></p>
 <p><a href="./employer-profile 1.php">Update Company Profile</a></p>
-<p><a href="./login 2.php">Logout</a></p>
+<p><a href="../Controller/logout.php">Logout</a></p>
 </div>
-<form method="post" action="" onsubmit="return collectData()">
+<form method="post" action="">
 <fieldset>
 <legend>Company Information</legend>
 <table>
-<tr><td>Company Name:</td><td></td></tr>
-<tr><td>Industry:</td><td></td></tr>
-<tr><td>Email:</td><td></td></tr>
+<tr><td>Company Name:</td><td><?php echo $employer_data['company_name'] ?? "";?></td></tr>
+<tr><td>Industry:</td><td><?php echo $employer_data['industry'] ?? ""; ?></td></tr>
+<tr><td>Email:</td><td><?php echo $employer_data['email'] ?? ""; ?></td></tr>
 </table>
 </fieldset>
 <fieldset>
 <legend>Job Statistics</legend>
 <table>
-<tr><td>Active Jobs:</td><td></td></tr>
-<tr><td>Total Applicants:</td><td></td></tr>
-<tr><td>Jobs Expiring Soon:</td><td></td></tr>
+<tr><td>Active Jobs:</td><td><?php echo $active_jobs; ?></td></tr>
+<tr><td>Total Applicants:</td><td><?php echo $total_applicants; ?></td></tr>
 </table>
 </fieldset>
 </form>
 </div>
 
-<script>function collectData() {
-
-}
-</script>
 
 </body>
 </html>
