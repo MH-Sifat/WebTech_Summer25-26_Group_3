@@ -9,6 +9,7 @@ $confirmPassword = "";
 $role="";
 $condition=false;
 $valid = true;
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $name=trim($_POST["name"] ?? "");
     $email=trim($_POST["email"] ?? "");
@@ -62,6 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "Registration successful!";
 
         
+        // registration entry in database
         $database= new db();
         $connection=$database->connection();
         $result=$database->signup($connection, "users", $name, $email, $password,$role);
