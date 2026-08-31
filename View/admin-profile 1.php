@@ -36,7 +36,6 @@ body{
     background-color: blue;
     padding: 12px 20px;
     margin: 20px 0 30px;
-    border-radius: 10px;
 }
 
 .navbar p {

@@ -36,7 +36,6 @@ body{
     background-color: blue;
     padding: 12px 20px;
     margin: 20px 0 30px;
-    border-radius: 10px;
 }
 
 .navbar p {
@@ -138,15 +137,15 @@ input[type="reset"]{
 </style>
 </head>
 <body>
-<div class="container">
-<h1>Job Seeker Profile</h1>
 <div class="navbar">
 <p><a href="./seeker-dashboard.php">Dashboard</a></p>
 <p><a href="./jobs 1.php">Find Jobs</a></p>
 <p><a href="./applications 1.php">My Applications</a></p>
 <p><a href="../Controller/logout.php">Logout</a></p>
-
 </div>
+<div class="container">
+<h1>Job Seeker Profile</h1>
+
 <form method="post" action="" enctype="multipart/form-data" onsubmit="return collectData()">
 <fieldset>
 <legend>Personal Information</legend>

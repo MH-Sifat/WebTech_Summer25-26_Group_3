@@ -32,7 +32,7 @@ body{
     background-color: blue;
     padding: 12px 20px;
     margin: 20px 0 30px;
-    border-radius: 10px;
+   /* border-radius: 10px;*/
 }
 
 .navbar p {
@@ -84,14 +84,14 @@ td{
     </style>
 </head>
 <body>
-<div class="container">
-<h1>Admin Management</h1>
 <div class="navbar">
 
 <p><a href="./admin-dashboard 1.php">Dashboard</a></p>
 <p><a href="./admin-profile 1.php">Update Profile</a></p>
 <p><a href="../Controller/logout.php">Logout</a></p>
 </div>
+<div class="container">
+<h1>Admin Management</h1>
 
 <form method="post" action=""> 
 <fieldset>

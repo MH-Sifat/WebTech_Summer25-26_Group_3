@@ -36,7 +36,6 @@ body{
     background-color: blue;
     padding: 12px 20px;
     margin: 20px 0 30px;
-    border-radius: 10px;
 }
 
 .navbar p {
@@ -137,13 +136,14 @@ input[type="reset"]{
     </style>
 </head>
 <body>
-<div class="container">
-<h1>Employer Profile</h1>
 <div class="navbar">
 <p><a href="./employer-dashboard 1.php">Dashboard</a></p>
 <p><a href="./employer-management 1.php">Manage Jobs</a></p>
 <p><a href="../Controller/logout.php">Logout</a></p>
 </div>
+<div class="container">
+<h1>Employer Profile</h1>
+
 <form method="post" action="" onsubmit="return collectData()">
 <fieldset>
 <legend>Company Information</legend>

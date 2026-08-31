@@ -14,13 +14,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['job_id'])) {
     
     if ($result) {
         echo "Application submitted successfully!";
-        Header("Location:../View/jobs 1.php");
+        Header("Location:../View/applications 1.php");
 
     } else {
         echo "You have already applied for this job.";
-        Header("Location:../View/jobs 1.php");
+        Header("Location:../View/applications 1.php");
     }
-
 
 }
 ?>

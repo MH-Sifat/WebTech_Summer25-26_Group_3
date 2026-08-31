@@ -4,7 +4,6 @@ include "../Model/db.php";
 
 session_start();
 
-
 $database = new db();
 $connection = $database->connection();
 

@@ -21,12 +21,6 @@ class db{
         $sql="INSERT INTO ".$tablename."(full_name, email, password, user_type ) VALUES ('".$username."', '".$useremail."','".$password."', '".$usertype."')";
         $result=$connection->query($sql);
 
-         if (!$result) {
-            die("SQL Error: " . $connection->error);
-        }
-
-        echo "Data inserted successfully!";
-
         return $result;
     }
 
@@ -42,20 +36,13 @@ class db{
     function jobPost($connection, $tablename, $employer_id, $title, $description, $requirements, $location, $jobType, $salary, $deadline) {
         $sql = "INSERT INTO ". $tablename ."(employer_id, title, description, requirements, location, job_type, salary, application_deadline, status) VALUES ('" . $employer_id . "', '" . $title . "', '" . $description . "', '" . $requirements . "', '" . $location . "', '" . $jobType . "', '" . $salary . "', '" . $deadline . "', 'open')";
         $result = $connection->query($sql);
-        if (!$result) {
-            die("SQL Error: " . $connection->error);
-        }
         return $result;
     }
 
 
     function searchJobs($connection, $tablename, $keyword, $location, $jobType) {
         $sql = "SELECT j.*, u.company_name, u.full_name as employer_name FROM " . $tablename . " j LEFT JOIN users u ON j.employer_id = u.id WHERE j.status = 'open' AND (j.title LIKE '%" . $keyword . "%' OR j.description LIKE '%" . $keyword . "%' OR '" . $keyword . "' = '') AND (j.location LIKE '%" . $location . "%' OR '" . $location . "' = '') AND (j.job_type = '" . $jobType . "' OR '" . $jobType . "' = '') ORDER BY j.created_at DESC";
-        
         $result = $connection->query($sql);
-        if (!$result) {
-            die("SQL Error: " . $connection->error);
-        }
         return $result;
     }
 
@@ -73,10 +60,6 @@ class db{
         $sql = "INSERT INTO " . $tablename . " (job_id, job_seeker_id, status) VALUES ('" . $job_id . "', '" . $job_seeker_id . "', 'pending')";
         
         $result = $connection->query($sql);
-        if (!$result) {
-            die("SQL Error: " . $connection->error);
-        }
-        echo "Application submitted successfully!";
         return $result;
     }
 
@@ -86,9 +69,6 @@ class db{
         $sql = "UPDATE " . $tablename . " SET full_name = '" . $name . "', email = '" . $email . "', phone = '" . $phone . "', education = '" . $education . "', skills = '" . $skills . "', experience = '" . $experience . "', cv_file = '" . $cv_path . "' WHERE id = '" . $id . "' AND user_type = 'job_seeker'";
     
         $result = $connection->query($sql);
-        if (!$result) {
-            die("SQL Error: " . $connection->error);
-        }
         return $result;
     }
 
@@ -96,9 +76,6 @@ class db{
      function updateEmployerProfile($connection, $tablename, $id, $companyName, $email, $phone, $website, $industry, $description) {
         $sql = "UPDATE " . $tablename . " SET company_name = '" . $companyName . "', email = '" . $email . "', phone = '" . $phone . "', company_website = '" . $website . "', industry = '" . $industry . "', company_description = '" . $description . "' WHERE id = '" . $id . "' AND user_type = 'employer'";
         $result = $connection->query($sql);
-        if (!$result) {
-            die("SQL Error: " . $connection->error);
-        }
         return $result;
     }
 
@@ -107,9 +84,6 @@ class db{
         $sql = "UPDATE " . $tablename . " SET full_name = '" . $name . "', email = '" . $email . "', phone = '" . $phone . "', password = '" . $password . "' WHERE id = '" . $id . "' AND user_type = 'admin'";
         
         $result = $connection->query($sql);
-        if (!$result) {
-            die("SQL Error: " . $connection->error);
-        }
         return $result;
     }
 

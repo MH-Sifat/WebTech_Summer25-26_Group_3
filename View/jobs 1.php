@@ -35,7 +35,6 @@ body{
     background-color: blue;
     padding: 12px 20px;
     margin: 20px 0 30px;
-    border-radius: 10px;
 }
 
 .navbar p {
@@ -122,14 +121,16 @@ input[type="submit"]{
     </style>
 </head>
 <body>
-<div class="container">
-<h1>Find Jobs</h1>
 <div class="navbar">
 <p><a href="./seeker-dashboard.php">Dashboard</a></p>
 <p><a href="./applications 1.php">My Applications</a></p>
 <p><a href="./seeker-profile.php">Update Profile</a></p>
 <p><a href="../Controller/logout.php">Logout</a></p>
 </div>
+
+<div class="container">
+<h1>Find Jobs</h1>
+
 <form method="post" action="" onsubmit="return collectData()">
 <fieldset>
 <legend>Search Jobs</legend>
